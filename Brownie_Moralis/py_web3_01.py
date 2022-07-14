@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from web3 import Web3
+from moralis import Moralis
 
 load_dotenv()
 node_provider = os.environ['NODE_PROVIDER']
@@ -19,8 +20,8 @@ def balance_of(ETH_address):
     print (balance_ETH)
 
 if __name__ == '__main__':
-    #are_we_connected()
-    #latest_block()
+    Moralis('infura_url').are_we_connected()
+    Moralis('infura_url').latest_block()
 
     #address got from etherscan
-    balance_of('0x646dB8ffC21e7ddc2B6327448dd9Fa560Df41087')
+    Moralis('infura_url').balance_of('0x646dB8ffC21e7ddc2B6327448dd9Fa560Df41087')

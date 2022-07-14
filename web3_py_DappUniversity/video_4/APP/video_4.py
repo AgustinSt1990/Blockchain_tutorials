@@ -17,12 +17,9 @@ address= to_checksum_address('0x124E5684f8A6E3Ba649765B0f9EE6E518FA89A5a')
 
 # HelloWorld contract abi
 #abi = json.loads(pd.read_json('HelloWorld_abi.json'))
-PATH_TRUFFLE_WK = r'C:\Users\aguST\repos\Blockchain\wb3_py_Dapp_Academy\video_4'
-truffleFile = json.load(open('HelloWorld.json'))
-
+PATH_TRUFFLE_WK = './build/contracts'
+truffleFile = json.load(open(PATH_TRUFFLE_WK + '/HelloWorld.json'))
 abi = truffleFile['abi']
-# bytecode = truffleFile['bytecode']
-
 
 # Initialize contract
 contract = w3.eth.contract(address=address, abi=abi)
